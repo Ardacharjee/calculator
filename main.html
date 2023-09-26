@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="Con">
+        <div class="calc">
+            <input type="text" id="op-s">
+            <button onclick="clear_scrn()">Cl</button>
+            <button onclick="delete_a()">Del</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="equal()" class="eq">=</button>
+        </div>
+    </div>
+
+
+    <script>
+        let ops = document.getElementById("op-s");
+
+        function display(num){
+            ops.value += num;
+        }
+
+        function equal(){
+          try{
+            ops.value = eval(ops.value);
+
+          }
+          catch(error){
+            ops.value = "Invalid";
+          }
+        }
+
+        function clear_scrn(){
+          ops.value = "";
+        }
+	function delete_a(){
+
+		ops.value = ops.value.slice(0,-1);
+	}
+
+        
+    </script>
+  </body>
+</html>
